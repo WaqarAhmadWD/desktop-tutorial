@@ -2,7 +2,7 @@
   <div class="w-full lg:ps-64">
     <div class="page-content space-y-6 p-6">
       <div class="flex w-full items-center justify-between">
-        <h4 class="text-xl font-medium">Edit Restaurant</h4>
+        <h4 class="text-xl font-medium">{{ $t("edit_restaurant") }}</h4>
         <ol
           aria-label="Breadcrumb"
           class="hidden min-w-0 items-center gap-2 whitespace-nowrap md:flex"
@@ -32,7 +32,7 @@
             aria-current="page"
             class="truncate text-sm font-medium text-primary hover:text-primary-500"
           >
-            Edit Restaurant
+          {{ $t("edit_restaurant") }}
           </li>
         </ol>
       </div>
@@ -40,7 +40,7 @@
         <div>
           <div class="rounded-lg border border-default-200 p-6">
             <h4 class="mb-4 text-base font-medium text-default-800">
-              Upload Logo Image
+              {{ $t("upload_logo_image") }}
             </h4>
             <div
               class="mb-4 flex h-96 flex-col items-center justify-center rounded-lg border border-default-200 p-6"
@@ -58,7 +58,7 @@
                           <div class="flex flex-col items-center">
                             <BsUpload class="text-xl text-[#f6821d]" />
                             <span class="block text-gray-500 font-normal"
-                              >Upload Logo Image</span
+                              >{{ $t("upload_logo_image") }}</span
                             >
                           </div>
                         </div>
@@ -75,7 +75,7 @@
               </div>
             </div>
             <h4 class="mb-4 text-base font-medium text-default-800">
-              Upload Cover Image
+              {{ $t("upload_cover_image") }}
             </h4>
             <div class="">
               <div
@@ -94,7 +94,7 @@
                             <div class="flex flex-col items-center">
                               <BsUpload class="text-xl text-[#f6821d]" />
                               <span class="block text-gray-500 font-normal"
-                                >Upload Cover Image</span
+                                >{{ $t("upload_cover_image") }}</span
                               >
                             </div>
                           </div>
@@ -126,7 +126,7 @@
                   <div class="relative max-w-full">
                     <input
                       type="text"
-                      placeholder="Enter Your Restaurant Name"
+                      :placeholder="$t('enter_your_restaurant_name')"
                       name="Rname"
                       id="Rname"
                       class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full"
@@ -138,12 +138,12 @@
                   <label
                     class="mb-2 block text-sm font-medium text-default-900"
                     for="address"
-                    >Address</label
+                    >{{ $t("address") }}</label
                   >
                   <div class="relative max-w-full">
                     <input
                       type="text"
-                      placeholder="Enter Your Address"
+                      :placeholder="$t('enter_your_address')"
                       name="address"
                       id="address"
                       class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full"
@@ -155,12 +155,12 @@
                   <label
                     class="mb-2 block text-sm font-medium text-default-900"
                     for="contactNO"
-                    >Contact Number</label
+                    >{{ $t("contact_number") }}</label
                   >
                   <div class="relative max-w-full">
                     <input
                       type="text"
-                      placeholder="Enter Your Contact Number"
+                      :placeholder="$t('enter_your_contact')"
                       name="contactNO"
                       id="contactNO"
                       class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full"
@@ -172,12 +172,12 @@
                   <label
                     class="mb-2 block text-sm font-medium text-default-900"
                     for="email"
-                    >Email</label
+                    >{{ $t("email") }}</label
                   >
                   <div class="relative max-w-full">
                     <input
                       type="email"
-                      placeholder="Enter Your Email"
+                      :placeholder="$t('enter_your_email')"
                       name="email"
                       id="email"
                       class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full"
@@ -191,7 +191,7 @@
                   <label
                     for="city"
                     class="mb-2 block text-sm font-medium text-default-900"
-                    >City</label
+                    >{{ $t("city") }}</label
                   >
                   <select
                     id="countries"
@@ -207,7 +207,7 @@
                   <label
                     for="countries"
                     class="mb-2 block text-sm font-medium text-default-900"
-                    >Country/Region</label
+                    >{{ $t("country_region") }}</label
                   >
                   <select
                     id="countries"
@@ -223,7 +223,7 @@
                   <label
                     for="billing-zip-code1"
                     class="mb-2 block text-sm font-medium text-default-900"
-                    >ZIP/Postal Code</label
+                    >{{ $t("zip_postal_code") }}</label
                   >
                   <div class="max-w-sm mx-auto">
                     <label for="zipCode"></label>
@@ -231,7 +231,7 @@
                       class="text-gray-900 text-sm rounded-lg block w-full p-2.5"
                       type="number"
                       id="zipCode"
-                      placeholder="Add Zip Code"
+                      :placeholder="$t('add_zip_code')"
                     />
                   </div>
                 </div>
@@ -250,7 +250,7 @@
                         <label
                           for="monday"
                           class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                          >Mon</label
+                          >{{ $t("mon") }}</label
                         >
                       </div>
                       <div class="w-full max-w-[7rem]">
@@ -336,7 +336,7 @@
                         <label
                           for="tuesday"
                           class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                          >Tue</label
+                          >{{ $t("tue") }}</label
                         >
                       </div>
                       <div class="w-full max-w-[7rem]">
@@ -423,7 +423,7 @@
                         <label
                           for="wednesday"
                           class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                          >Wed</label
+                          >{{ $t("wed") }}</label
                         >
                       </div>
                       <div class="w-full max-w-[7rem]">
@@ -509,7 +509,7 @@
                         <label
                           for="thursday"
                           class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                          >Thu</label
+                          >{{ $t("thu") }}</label
                         >
                       </div>
                       <div class="w-full max-w-[7rem]">
@@ -595,7 +595,7 @@
                         <label
                           for="friday"
                           class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                          >Fri</label
+                          >{{ $t("fri") }}</label
                         >
                       </div>
                       <div class="w-full max-w-[7rem]">
@@ -681,7 +681,7 @@
                         <label
                           for="saturday"
                           class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                          >Sat</label
+                          >{{ $t("sat") }}</label
                         >
                       </div>
                       <div class="w-full max-w-[7rem]">
@@ -767,7 +767,7 @@
                         <label
                           for="sunday"
                           class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                          >Sun</label
+                          >{{ $t("sun") }}</label
                         >
                       </div>
                       <div class="w-full max-w-[7rem]">
@@ -845,12 +845,12 @@
                   <label
                     class="mb-2 block text-sm font-medium text-default-900"
                     for="operatingHours"
-                    >Operating Hours</label
+                    >{{ $t("operating_hours") }}</label
                   >
                   <div class="relative w-full">
                     <textarea
                       v-model="singleRestLocal.operatingHours"
-                      placeholder="Enter Operating Hours"
+                      :placeholder="$t('enter_operating_hours')"
                       name="operatingHours"
                       rows="2"
                       class="rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full"
@@ -861,11 +861,11 @@
                   <label
                     class="mb-2 block text-sm font-medium text-default-900"
                     for="description"
-                    >Description</label
+                    >{{ $t("description") }}</label
                   >
                   <div class="relative w-full">
                     <textarea
-                      placeholder="Enter Description"
+                      :placeholder="$t('enter_description')"
                       name="description"
                       rows="5"
                       class="rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full"
@@ -915,7 +915,7 @@
                     <polyline points="17 21 17 13 7 13 7 21"></polyline>
                     <polyline points="7 3 7 8 15 8"></polyline>
                   </svg>
-                  Save
+                  {{ $t("save") }}
                 </button>
               </div>
             </form>

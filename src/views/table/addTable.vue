@@ -1,5 +1,22 @@
 <template>
   <div class="w-full lg:ps-64">
+    <div class="page-content space-y-6 p-6">
+      <div class="flex w-full items-center justify-between">
+        <h4 class="text-xl font-medium">{{ $t("add table") }}</h4>
+        <ol aria-label="Breadcrumb" class="hidden min-w-0 items-center gap-2 whitespace-nowrap md:flex">
+          <li class="text-sm">
+            <a class="flex items-center gap-2 align-middle text-default-800 transition-all hover:text-primary-500"
+              href="/yum_b/admin/customers">{{ $t("tables") }}<svg stroke="currentColor" fill="none" stroke-width="2"
+                viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="16" width="16"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg></a>
+          </li>
+          <li aria-current="page" class="truncate text-sm font-medium text-[#f58220]">
+            {{ $t("add table") }}
+          </li>
+        </ol>
+      </div>
     <div class="xl:col-span-2 m-4">
       <div class="rounded-lg border border-default-200 p-6">
         <div class="grid gap-6 lg:grid-cols-2">
@@ -8,12 +25,12 @@
               <label
                 class="mb-2 block text-sm font-medium text-default-900"
                 for="productname"
-                >Table Number</label
+                >{{ $t("table_number") }}</label
               >
               <div class="relative max-w-full">
                 <input
                   type="text"
-                  placeholder="Enter table number"
+                  :placeholder="$t('enter_table_number')"
                   name="productname"
                   id="productname"
                   class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full"
@@ -25,7 +42,7 @@
               <label
                 for="countries"
                 class="block mb-2 text-sm font-medium text-gray-900"
-                >Table Status</label
+                >{{ $t("table_status") }}</label
               >
               <div class="relative">
                 <select
@@ -33,9 +50,9 @@
                   class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full"
                   v-model="singleTableLocal.status"
                 >
-                  <option selected>available</option>
-                  <option>reserved</option>
-                  <option>occupied</option>
+                  <option selected>{{ $t("available") }}</option>
+                  <option>{{ $t("reserved") }}</option>
+                  <option>{{ $t("occupied") }}</option>
                 </select>
               </div>
             </div>
@@ -44,7 +61,7 @@
               <label
                 class="mb-2 block text-sm font-medium text-default-900"
                 for="quantity"
-                >Table Capacity</label
+                >{{ $t("table_capacity") }}</label
               >
               <div class="relative max-w-full">
                 <input
@@ -101,7 +118,7 @@
                     />
                   </svg>
                 </div>
-                Save
+                {{ $t("save") }}
               </button>
             </div>
           </div>
@@ -109,12 +126,13 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 <script setup>
 import { ref } from "vue";
 const singleTableLocal = ref({
   tableNumber: "",
-  status: "available",
+  status: "Available",
   capacity: 0,
 });
 import { useRestaurantAdminStore } from "@/stores/restaurantAdmin";

@@ -2,7 +2,7 @@
   <div class="w-full lg:ps-64">
     <div class="page-content space-y-6 p-6">
       <div class="flex w-full items-center justify-between">
-        <h4 class="text-xl font-medium">Orders List</h4>
+        <h4 class="text-xl font-medium">{{ $t("order list") }}</h4>
         <ol
           aria-label="Breadcrumb"
           class="hidden min-w-0 items-center gap-2 whitespace-nowrap md:flex"
@@ -12,7 +12,7 @@
               class="flex items-center gap-2 align-middle text-default-800 transition-all hover:text-primary-500"
               to="/order-details"
             >
-              Orders
+            {{ $t("orders") }}
               <svg
                 stroke="currentColor"
                 fill="none"
@@ -32,7 +32,7 @@
             aria-current="page"
             class="truncate text-sm font-medium text-primary hover:text-primary-500"
           >
-            Orders List
+          {{ $t("order list") }}
           </li>
         </ol>
       </div>
@@ -65,7 +65,7 @@
                   </div>
                   <div>
                     <p class="mb-1 text-base font-medium text-default-500">
-                      Food Delivered
+                      {{ $t("food_delivered") }}
                     </p>
                     <h4 class="mb-2 text-2xl font-semibold text-default-950">
                       23,568
@@ -98,7 +98,7 @@
                   </div>
                   <div>
                     <p class="mb-1 text-base font-medium text-default-500">
-                      Your Balance
+                      {{ $t("your_balance") }}
                     </p>
                     <h4 class="mb-2 text-2xl font-semibold text-default-950">
                       $8,904.80
@@ -114,7 +114,7 @@
                     class="flex flex-wrap items-center gap-4 sm:justify-between lg:flex-nowrap"
                   >
                     <h2 class="text-xl font-semibold text-default-800">
-                      Order History
+                      {{ $t("order_history") }}
                     </h2>
                     <div class="flex flex-wrap items-center justify-end gap-2">
                       <div class="hs-dropdown relative inline-flex">
@@ -197,22 +197,22 @@
                             <th
                               class="whitespace-nowrap px-6 py-3 text-start text-sm font-medium text-default-800"
                             >
-                              Date
+                            {{ $t("date") }}
                             </th>
                             <th
                               class="whitespace-nowrap px-6 py-3 text-start text-sm font-medium text-default-800"
                             >
-                              Order ID
+                            {{ $t("order_id") }}
                             </th>
                             <th
                               class="whitespace-nowrap px-6 py-3 text-start text-sm font-medium text-default-800"
                             >
-                              Dish
+                            {{ $t("dish") }}
                             </th>
                             <th
                               class="whitespace-nowrap px-6 py-3 text-start text-sm font-medium text-default-800"
                             >
-                              Total
+                            {{ $t("total") }}
                             </th>
                             <th
                               class="whitespace-nowrap px-6 py-3 text-start text-sm font-medium text-default-800"
@@ -1460,7 +1460,7 @@
             <div class="p-6">
               <div class="mb-6">
                 <h2 class="mb-4 text-xl font-semibold text-default-800">
-                  Ongoing Orders
+                  {{ $t("ongoing_orders") }}
                 </h2>
               </div>
               <div class="mb-6">

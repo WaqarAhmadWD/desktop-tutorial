@@ -63,10 +63,7 @@
                 <b>Role :</b>
                 <span class="ms-2">{{ singleUserLocal?.role }}</span>
               </p>
-              <p
-                class="mb-3 text-zinc-400"
-                v-if="singleUser?.data.associatedRestaurant"
-              >
+              <p class="mb-3 text-zinc-400">
                 <b>Associated Restaurant :</b>
                 <span class="ms-2">{{ singleRest?.data.name }}</span>
               </p>
@@ -1362,9 +1359,7 @@ const props = defineProps({
 
 onMounted(async () => {
   await fetchSingleUser(props.id);
-  if (singleUser.value.data.associatedRestaurant) {
-    await fetchSingleRest(singleUser.value.data.associatedRestaurant);
-  }
+  await fetchSingleRest(singleUser.value.data.associatedRestaurant);
   singleUserLocal.value = await singleUser.value.data;
 });
 </script>
