@@ -1,15 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
-import order_list from "@/views/order/order_list.vue";
-import order_details from "@/views/order/order_details.vue";
-import dashboard from "@/views/dashboard.vue";
 import singlemenu from "@/views/menus/MenusDetails.vue";
-import addMenus from "@/views/menus/addMenus.vue";
 import editMenus from "@/views/menus/editMenus.vue";
-import MenusDetails from "@/views/menus/singleMenus.vue";
 import userList from "@/views/User/userList.vue";
-import AddUser from "@/views/User/addUser.vue";
 import editUser from "@/views/User/userEdit.vue";
-import userDetails from "@/views/User/UserDetails.vue";
 import addRestaurant from "@/views/restaurant/addRestaurant.vue";
 import restaurantList from "@/views/restaurant/restaurantList.vue";
 import viewRestaurant from "@/views/restaurant/viewRestaurant.vue";
@@ -22,9 +15,13 @@ import AddBooking from "@/views/bookings/addBooking.vue";
 import BookingDetails from "@/views/bookings/bookingDetails.vue";
 import EditBooking from "@/views/bookings/editBooking.vue";
 import EditTable from "@/views/table/editTable.vue";
-import CategoryList from "@/views/category/categoryList.vue";
-import AddCategory from "@/views/category/addCategory.vue";
-import CategoryEdit from "@/views/category/categoryEdit.vue";
+import Order_details from "@/views/order/order_details.vue";
+import Dashboard from "@/views/dashboard.vue";
+import MenusDetails from "@/views/menus/MenusDetails.vue";
+import AddMenus from "@/views/menus/addMenus.vue";
+import Order_list from "@/views/order/order_list.vue";
+import AddUser from "@/views/User/AddUser.vue";
+import UserDetails from "@/views/User/userDetails.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -32,18 +29,18 @@ const router = createRouter({
     {
       path: "/",
       name: "dashboard",
-      component: dashboard,
+      component: Dashboard,
     },
     //order
     {
       path: "/order-list",
       name: "order list",
-      component: order_list,
+      component: Order_list,
     },
     {
       path: "/order-details",
       name: "order details",
-      component: order_details,
+      component: Order_details,
     },
     //menu
     {
@@ -60,7 +57,7 @@ const router = createRouter({
     {
       path: "/menu-add",
       name: "add menu",
-      component: addMenus,
+      component: AddMenus,
     },
     {
       path: "/menu-edit/:id",
@@ -88,7 +85,7 @@ const router = createRouter({
     {
       path: "/user-details/:id",
       name: "userDetails",
-      component: userDetails,
+      component: UserDetails,
       props: true,
     },
     //restaurant
@@ -157,30 +154,6 @@ const router = createRouter({
       name: "Edit Booking",
       component: EditBooking,
     },
-    // category
-    {
-      path: "/category-list",
-      name: "category list",
-      component: CategoryList,
-    },
-    {
-      path: "/add-category",
-      name: "add category",
-      component: AddCategory,
-    },
-    {
-      path: "/edit-category/:id",
-      name: "editCategory",
-      component: CategoryEdit,
-      props: true,
-    },
-    {
-      path: "/category-details/:id",
-      name: "categoryDetails",
-      component: userDetails,
-      props: true,
-    },
   ],
 });
-
 export default router;

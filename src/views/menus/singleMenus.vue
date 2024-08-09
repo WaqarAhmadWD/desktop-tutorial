@@ -29,7 +29,7 @@
             aria-current="page"
             class="truncate text-sm font-medium text-primary hover:text-primary-500"
           >
-            {{ singleMenuLocal?.name }}
+            {{ singleMenuLocal.name }}
           </li>
         </ol>
       </div>
@@ -70,7 +70,7 @@
               <h3 class="text-3xl">${{ singleMenuLocal.price }}</h3>
             </div>
             <h5 class="mb-4 text-lg font-medium text-default-600">
-              Category: {{ localSingleCategory?.name }}
+              Category: {{ singleMenuLocal.category }}
             </h5>
 
             <p class="mb-4 text-sm text-default-500">
@@ -199,16 +199,13 @@ import { useRestaurantAdminStore } from "@/stores/restaurantAdmin";
 import { storeToRefs } from "pinia";
 import { RouterLink } from "vue-router";
 const restStore = useRestaurantAdminStore();
-const { fetchSingleMenu, fetchSingleCategory } = restStore;
-const { singleMenu, loading, singleCategory } = storeToRefs(restStore);
+const { fetchSingleMenu } = restStore;
+const { singleMenu, loading } = storeToRefs(restStore);
 const options = ["available", "reserved", "occupied"];
-const localSingleCategory = ref();
 onMounted(async () => {
   await fetchSingleMenu(props.id);
   singleMenuLocal.value = await singleMenu.value;
-  await fetchSingleCategory(singleMenuLocal.value.category);
-  localSingleCategory.value = await singleCategory.value;
-  console.log(localSingleCategory.value);
+  console.log(singleMenuLocal.value);
 });
 </script>
 

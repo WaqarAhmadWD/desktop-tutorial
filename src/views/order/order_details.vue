@@ -2,7 +2,7 @@
   <div class="w-full lg:ps-64">
     <div class="page-content space-y-6 p-6">
       <div class="flex w-full items-center justify-between">
-        <h4 class="text-xl font-medium">Order Details</h4>
+        <h4 class="text-xl font-medium">{{ $t("order details") }}</h4>
         <ol
           aria-label="Breadcrumb"
           class="hidden min-w-0 items-center gap-2 whitespace-nowrap md:flex"
@@ -12,7 +12,7 @@
               class="flex items-center gap-2 align-middle text-default-800 transition-all hover:text-primary-500"
               href="/yum_b/admin/orders"
             >
-              Order
+            {{ $t("orders") }}
               <svg
                 stroke="currentColor"
                 fill="none"
@@ -32,7 +32,7 @@
             aria-current="page"
             class="truncate text-sm font-medium text-primary hover:text-primary-500"
           >
-            Order Details
+          {{ $t("order details") }}
           </li>
         </ol>
       </div>
@@ -40,7 +40,7 @@
         <div
           class="flex flex-wrap items-center gap-3 border-b border-default-200 p-6"
         >
-          <h4 class="text-xl font-medium text-default-900">Order #9F36CA</h4>
+          <h4 class="text-xl font-medium text-default-900">{{ $t("order") }} #9F36CA</h4>
           <div class="flex flex-wrap items-center gap-3">
             <svg
               stroke="currentColor"
@@ -71,12 +71,11 @@
             >
               <circle cx="12.1" cy="12.1" r="1"></circle>
             </svg>
-            <h4 class="text-sm text-default-600">3 Products</h4>
+            <h4 class="text-sm text-default-600">3 {{ $t("products") }}</h4>
           </div>
           <a
             class="ms-auto text-base font-medium text-primary"
-            href="/yum_b/admin/orders"
-            >Back to List</a
+            >{{ $t("back_to_list") }}</a
           >
         </div>
         <div class="p-6">
@@ -93,31 +92,31 @@
                               scope="col"
                               class="whitespace-nowrap px-5 py-3 text-start text-xs font-medium uppercase text-default-500"
                             >
-                              Dish
+                            {{ $t("dish") }}
                             </th>
                             <th
                               scope="col"
                               class="whitespace-nowrap px-5 py-3 text-start text-xs font-medium uppercase text-default-500"
                             >
-                              Price
+                            {{ $t("price") }}
                             </th>
                             <th
                               scope="col"
                               class="whitespace-nowrap px-5 py-3 text-start text-xs font-medium uppercase text-default-500"
                             >
-                              Quantity
+                            {{ $t("quantity") }}
                             </th>
                             <th
                               scope="col"
                               class="whitespace-nowrap px-5 py-3 text-start text-xs font-medium uppercase text-default-500"
                             >
-                              Sub Total
+                            {{ $t("sub_total") }}
                             </th>
                             <th
                               scope="col"
                               class="whitespace-nowrap px-5 py-3 text-start text-xs font-medium uppercase text-default-500"
                             >
-                              special order
+                            {{ $t("special_order") }}
                             </th>
                           </tr>
                         </thead>

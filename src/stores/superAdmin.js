@@ -12,6 +12,7 @@ export const useSuperAdminStore = defineStore("superAdmin", () => {
   const loading = ref(false);
   const singleRest = ref(null);
   const singleUser = ref(null);
+  const showError = ref(null)
 
   const setError = (err) => {
     error.value = err;
@@ -243,11 +244,7 @@ export const useSuperAdminStore = defineStore("superAdmin", () => {
     } catch (error) {
       loading.value = false;
       setError(error);
-      Swal.fire({
-        icon: "error",
-        title: "Internal server error",
-        padding: "2em",
-      });
+      showError.value = error.message;
     }
   };
 
@@ -428,5 +425,6 @@ export const useSuperAdminStore = defineStore("superAdmin", () => {
     fetchSingleUser,
     singleUser,
     deleteUser,
+    showError
   };
 });

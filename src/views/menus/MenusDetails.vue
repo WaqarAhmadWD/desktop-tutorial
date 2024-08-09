@@ -2,7 +2,7 @@
   <div class="w-full lg:ps-64">
     <div class="page-content space-y-6 p-6">
       <div class="flex w-full items-center justify-between">
-        <h4 class="text-xl font-medium">Dishes List</h4>
+        <h4 class="text-xl font-medium">{{ $t("menus_list")}}</h4>
         <ol
           aria-label="Breadcrumb"
           class="hidden min-w-0 items-center gap-2 whitespace-nowrap md:flex"
@@ -12,7 +12,7 @@
               class="flex items-center gap-2 align-middle text-default-800 transition-all hover:text-primary-500"
               href="/yum_b/admin/dishes"
             >
-              Dishes
+            {{ $t("menus")}}
               <svg
                 stroke="currentColor"
                 fill="none"
@@ -32,7 +32,7 @@
             aria-current="page"
             class="truncate text-sm font-medium text-primary hover:text-primary-500"
           >
-            Dishes List
+          {{ $t("menus_list")}}
           </li>
         </ol>
       </div>
@@ -43,7 +43,7 @@
               class="flex flex-wrap items-center justify-between gap-4 md:flex-nowrap"
             >
               <h2 class="text-xl font-semibold text-default-800">
-                Dishes List
+                {{ $t("menus_list")}}
               </h2>
               <div class="flex flex-wrap items-center gap-4">
                 <div class="hs-dropdown relative inline-flex">
@@ -116,7 +116,7 @@
                     <path d="M5 12h14"></path>
                     <path d="M12 5v14"></path>
                   </svg>
-                  Add Dish
+                  {{ $t("add_menu")}}
                 </RouterLink>
               </div>
             </div>
@@ -130,23 +130,27 @@
                       <th
                         class="whitespace-nowrap px-6 py-3 text-start text-sm font-medium text-default-800"
                       >
-                        Dish Name
-                      </th>
-
-                      <th
-                        class="whitespace-nowrap px-6 py-3 text-start text-sm font-medium text-default-800"
-                      >
-                        Price
+                      {{ $t("menu_name")}}
                       </th>
                       <th
                         class="whitespace-nowrap px-6 py-3 text-start text-sm font-medium text-default-800"
                       >
-                        Statusf
+                      {{ $t("category")}}
                       </th>
                       <th
                         class="whitespace-nowrap px-6 py-3 text-start text-sm font-medium text-default-800"
                       >
-                        Action
+                      {{ $t("price")}}
+                      </th>
+                      <th
+                        class="whitespace-nowrap px-6 py-3 text-start text-sm font-medium text-default-800"
+                      >
+                        Status
+                      </th>
+                      <th
+                        class="whitespace-nowrap px-6 py-3 text-start text-sm font-medium text-default-800"
+                      >
+                      {{ $t("actions")}}
                       </th>
                     </tr>
                   </thead>
@@ -170,7 +174,11 @@
                           {{ singleMenu.name }}
                         </p>
                       </td>
-
+                      <td
+                        class="whitespace-nowrap px-6 py-4 text-sm font-medium text-default-500"
+                      >
+                        {{ singleMenu.category }}
+                      </td>
                       <td
                         class="whitespace-nowrap px-6 py-4 text-sm font-medium text-default-500"
                       >
@@ -303,15 +311,12 @@ import { useRestaurantAdminStore } from "@/stores/restaurantAdmin";
 import { RouterLink } from "vue-router";
 const restStore = useRestaurantAdminStore();
 import { storeToRefs } from "pinia";
-import { onMounted, ref } from "vue";
-const { fetchMenu, deleteMenu, fetchCategory } = restStore;
-const { menu, loading, singleCategory } = storeToRefs(restStore);
-const menuLocal = ref();
-const localMenu = ref();
+import { onMounted } from "vue";
+const { fetchMenu, deleteMenu } = restStore;
+const { menu, loading } = storeToRefs(restStore);
 onMounted(async () => {
   await fetchMenu();
-  await fetchCategory();
-  menuLocal.value = menu.value;
+  console.log(menu.value);
 });
 const deleteData = async (id) => {
   await deleteMenu(id);
