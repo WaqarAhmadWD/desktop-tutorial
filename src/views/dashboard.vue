@@ -10,7 +10,7 @@
               <div class="w-full xl:w-1/3 lg:w-[90%] px-4 py-2 h-full">
                 <div class="bg-white rounded-lg shadow-md p-4 h-full">
                   <div class="flex justify-between items-center mb-4">
-                    <h5 class="text-lg font-semibold">{{ $t("statistics") }}</h5>
+                    <h5 class="text-lg font-semibold">Statistics</h5>
                     <div class="relative">
                       <button
                         @click="toggleDropdown"
@@ -58,7 +58,7 @@
                   <div class="grid grid-cols-2 gap-4">
                     <div>
                       <div class="mb-2">
-                        <p class="text-sm font-medium">{{ $t("total visits") }}</p>
+                        <p class="text-sm font-medium">Total Visits</p>
                         <p class="text-lg font-semibold">423,964</p>
                       </div>
                       <apexchart
@@ -71,7 +71,7 @@
                     </div>
                     <div>
                       <div class="mb-2">
-                        <p class="text-sm font-medium">{{ $t("paid visits") }}</p>
+                        <p class="text-sm font-medium">Paid Visits</p>
                         <p class="text-lg font-semibold">7,929</p>
                       </div>
                       <apexchart
@@ -91,7 +91,7 @@
               >
                 <div class="bg-white rounded-lg shadow-md p-4">
                   <div class="flex justify-between items-center mb-4">
-                    <h5 class="text-lg font-semibold">{{ $t("expenses") }}</h5>
+                    <h5 class="text-lg font-semibold">Expenses</h5>
                     <div class="relative">
                       <button
                         @click="toggleExpensesDropdown"
@@ -145,7 +145,7 @@
                   </div>
                   <div class="mb-4">
                     <p class="text-2xl font-semibold">
-                      $ 45,141 <span class="text-sm">{{ $t("this week") }}</span>
+                      $ 45,141 <span class="text-sm">this week</span>
                     </p>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -188,7 +188,7 @@
                       <div class="account-box">
                         <div class="info">
                           <div class="inv-title">
-                            <h5>{{ $t("total balance") }}</h5>
+                            <h5>Total Balance</h5>
                           </div>
                           <div class="inv-balance-info">
                             <p class="inv-balance">$ 41,741.42</p>
@@ -241,7 +241,7 @@
                               </svg>
                             </a>
                           </div>
-                          <a >{{ $t("upgrade") }}</a>
+                          <a href="javascript:void(0);">Upgrade</a>
                         </div>
                       </div>
                     </div>
@@ -261,7 +261,7 @@
                     style="box-shadow: none"
                   >
                     <div class="widget-heading">
-                      <h5>{{ $t("recent activities") }}</h5>
+                      <h5>Recent Activities</h5>
                     </div>
                     <div class="widget-content h-[25rem] overflow-scroll">
                       <perfect-scrollbar class="timeline-line">
@@ -509,7 +509,7 @@
               <div class="w-full xl:w-[50%] lg:w-[90%] mb-4">
                 <div class="widget widget-transaction">
                   <div class="widget-heading">
-                    <h5>{{ $t("transactions") }}</h5>
+                    <h5>Transactions</h5>
                     <div class="task-action"></div>
                   </div>
 
@@ -661,7 +661,7 @@
               <div class="w-full xl:w-[50%] lg:w-[90%] mb-4">
                 <div class="widget widget-summary">
                   <div class="widget-heading">
-                    <h5>{{ $t("summary") }}</h5>
+                    <h5>Summary</h5>
                   </div>
                   <div class="widget-content">
                     <div class="summary-list">
@@ -801,7 +801,7 @@
             <div class="xl:col-span-9 lg:w-[90%] px-4 col-span-12 mb-4">
               <div class="bg-white shadow-md rounded p-4">
                 <div class="flex justify-between items-center mb-4">
-                  <h5 class="text-lg font-medium">{{ $t("unique visitors") }}</h5>
+                  <h5 class="text-lg font-medium">Unique Visitors</h5>
                 </div>
                 <div class="widget-content">
                   <apexchart
@@ -823,7 +823,7 @@
               >
                 <div class="widget widget-revenue">
                   <div class="widget-heading">
-                    <h5>{{ $t("revenue") }}</h5>
+                    <h5>Revenue</h5>
                   </div>
 
                   <div class="widget-content">
@@ -846,7 +846,7 @@
                 <div class="bg-white shadow-md rounded p-4">
                   <div class="widget-sales-category">
                     <div class="widget-heading">
-                      <h5>{{ $t("sales by category") }}</h5>
+                      <h5>Sales by Category</h5>
                     </div>
                     <div class="widget-content">
                       <apexchart

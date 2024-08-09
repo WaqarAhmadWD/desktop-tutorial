@@ -2,7 +2,7 @@
   <div class="w-full lg:ps-64">
     <div class="page-content space-y-6 p-6">
       <div class="flex w-full items-center justify-between">
-        <h4 class="text-xl font-medium">{{ $t("table_list") }}</h4>
+        <h4 class="text-xl font-medium">Table List</h4>
 
         <ol
           aria-label="Breadcrumb"
@@ -11,7 +11,8 @@
           <li class="text-sm">
             <a
               class="flex items-center gap-2 align-middle text-default-800 transition-all hover:text-primary-500"
-              >{{ $t("tables") }}<svg
+              href="/yum_b/admin/dishes"
+              >Tables<svg
                 stroke="currentColor"
                 fill="none"
                 stroke-width="2"
@@ -29,7 +30,7 @@
             aria-current="page"
             class="truncate text-sm font-medium text-primary hover:text-primary-500"
           >
-          {{ $t("table_list") }}
+            Tables List
           </li>
         </ol>
       </div>
@@ -39,8 +40,40 @@
             <div
               class="flex flex-wrap items-center justify-between gap-4 md:flex-nowrap"
             >
-              <h2 class="text-xl font-semibold text-default-800">{{ $t("table_list") }}</h2>
+              <h2 class="text-xl font-semibold text-default-800">Total List</h2>
               <div class="flex flex-wrap items-center gap-4">
+                <div class="hs-dropdown relative inline-flex">
+                  <div
+                    class="hs-dropdown-menu z-20 mt-4 hidden min-w-[200px] rounded-lg border border-default-100 bg-white p-1.5 opacity-0 shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] transition-[opacity,margin] hs-dropdown-open:opacity-100 dark:bg-default-50"
+                  >
+                    <ul class="flex flex-col gap-1">
+                      <li>
+                        <span
+                          class="flex items-center gap-3 rounded px-3 py-2 font-normal transition-all hover:bg-default-100 hover:text-default-700 bg-default-100 text-default-700"
+                          >Ascending</span
+                        >
+                      </li>
+                      <li>
+                        <span
+                          class="flex items-center gap-3 rounded px-3 py-2 font-normal transition-all hover:bg-default-100 hover:text-default-700 text-default-600"
+                          >Descending</span
+                        >
+                      </li>
+                      <li>
+                        <span
+                          class="flex items-center gap-3 rounded px-3 py-2 font-normal transition-all hover:bg-default-100 hover:text-default-700 text-default-600"
+                          >Trending</span
+                        >
+                      </li>
+                      <li>
+                        <span
+                          class="flex items-center gap-3 rounded px-3 py-2 font-normal transition-all hover:bg-default-100 hover:text-default-700 text-default-600"
+                          >Recent</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
                 <RouterLink
                   class="inline-flex rounded-md bg-primary px-6 py-2.5 text-sm bg-orange-500 text-white hover:bg-primary-500"
                   to="/add-table"
@@ -58,7 +91,7 @@
                   >
                     <path d="M5 12h14"></path>
                     <path d="M12 5v14"></path></svg
-                  >{{ $t("add table") }}</RouterLink
+                  >Add Table</RouterLink
                 >
               </div>
             </div>
@@ -77,13 +110,13 @@
                       <th
                         class="whitespace-nowrap px-0 py-3 text-start text-sm font-medium text-default-800"
                       >
-                      {{ $t("table_number") }}
+                        Table Number
                       </th>
 
                       <th
                         class="whitespace-nowrap px-0 py-3 text-start text-sm font-medium text-default-800"
                       >
-                      {{ $t("capacity") }}
+                        Capacity
                       </th>
                       <!-- <th class="whitespace-nowrap px-6 py-3 text-start text-sm font-medium text-default-800">Created By
                     </th> -->
@@ -95,7 +128,7 @@
                       <th
                         class="whitespace-nowrap px-9 py-3 text-start text-sm font-medium text-default-800"
                       >
-                      {{ $t("actions") }}
+                        Action
                       </th>
                     </tr>
                   </thead>

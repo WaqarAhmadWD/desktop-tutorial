@@ -1,49 +1,42 @@
 <template>
   <div class="w-full lg:ps-64">
-    <div class="page-content space-y-6 p-6">
-      <div class="flex w-full items-center justify-between">
-        <h4 class="text-xl font-medium">{{ $t("edit_menu") }}</h4>
-        <ol aria-label="Breadcrumb" class="hidden min-w-0 items-center gap-2 whitespace-nowrap md:flex">
-          <li class="text-sm">
-            <a class="flex items-center gap-2 align-middle text-default-800 transition-all hover:text-primary-500"
-              href="/yum_b/admin/customers">{{ $t("menus") }}<svg stroke="currentColor" fill="none" stroke-width="2"
-                viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="16" width="16"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="m9 18 6-6-6-6"></path>
-              </svg></a>
-          </li>
-          <li aria-current="page" class="truncate text-sm font-medium text-[#f58220]">
-            {{ $t("edit_menu") }}
-          </li>
-        </ol>
-      </div>
     <div class="grid gap-6 xl:grid-cols-3">
       <div>
-          <div class="rounded-lg border border-default-200 p-6">
-            <h4 class="mb-4 text-base font-medium text-default-800">{{ $t("upload_logo_image") }}</h4>
-            <div class="mb-4 flex h-96 flex-col items-center justify-center rounded-lg border border-default-200 p-6">
-                <div class="py-20 bg-white px-2">
-                    <div class="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl">
-                        <div class="md:flex">
-                            <div class="w-full p-3">
-                                <div class="relative h-48 rounded-lg border-dashed border-2 border-[#f6821d] bg-[#fef1e8] flex justify-center items-center">
-                                <div class="absolute">
-                                    
-                                    <div class="flex flex-col items-center">
-                                        <BsUpload class="text-xl  text-[#f6821d]" />
-                                    <span class="block text-gray-500 font-normal">{{ $t("upload_logo_image") }}</span>
-                                    </div>
-                                </div>
-
-                                <input type="file" @change="handleFileUpload" accept="image/*" class="h-full w-full opacity-0" name="">
-                                </div>
-                            </div>
-                        </div>
+        <div class="rounded-lg border border-default-200 p-6">
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          />
+          <div class="py-20 bg-white px-2">
+            <div
+              class="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl"
+            >
+              <div class="md:flex">
+                <div class="w-full p-3">
+                  <div
+                    class="relative h-96 rounded-lg border-dashed border-2 border-pink-700 bg-pink-100 flex justify-center items-center"
+                  >
+                    <div class="absolute">
+                      <div class="flex flex-col items-center">
+                        <i class="fa fa-folder-open fa-4x text-pink-700"></i>
+                        <span class="block text-pink-400 font-normal"
+                          >Upload Image</span
+                        >
+                      </div>
                     </div>
+
+                    <input
+                      type="file"
+                      class="h-full w-full opacity-0"
+                      name=""
+                    />
+                  </div>
                 </div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
       <div class="xl:col-span-2">
         <div class="rounded-lg border border-default-200 p-6">
           <div class="grid gap-6 lg:grid-cols-2">
@@ -52,7 +45,7 @@
                 <label
                   class="mb-2 block text-sm font-medium text-default-900"
                   for="productname"
-                  >{{ $t("menu_name") }}</label
+                  >Menu Name</label
                 >
                 <div class="relative max-w-full">
                   <input
@@ -68,28 +61,30 @@
               <div>
                 <label
                   for="countries"
-                  class="block mb-2 text-sm font-medium text-gray-900"
-                  >{{ $t("menu_category") }}</label
+                  class="mb-2 block text-sm font-medium text-default-900"
+                  >Category</label
                 >
-                <div class="relative">
-                  <div class="relative max-w-full">
-                    <input
-                      type="text"
-                      placeholder="category"
-                      name="category"
-                      id="category"
-                      class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full"
-                      v-model="singleMenuLocal.category"
-                    />
-                  </div>
-                </div>
+                <select
+                  id="countries"
+                  class="text-gray-900 text-sm rounded-lg block w-full p-2.5"
+                  v-model="singleMenuLocal.category"
+                >
+                  <option selected disabled>Select: category</option>
+                  <option
+                    v-for="(rest, index) in categoryLocal"
+                    :key="index"
+                    :value="rest._id"
+                  >
+                    {{ rest.name }}
+                  </option>
+                </select>
               </div>
               <div class="grid gap-6 lg:grid-cols-2">
                 <div class="relative max-w-full">
                   <label
                     class="mb-2 block text-sm font-medium text-default-900"
                     for="sellingPrice"
-                    >{{ $t("menu_price") }}</label
+                    >Menu Price</label
                   >
                   <div class="relative max-w-full">
                     <input
@@ -107,12 +102,12 @@
                 <label
                   class="mb-2 block text-sm font-medium text-default-900"
                   for="quantity"
-                  >{{ $t("description") }}</label
+                  >Description</label
                 >
                 <div class="relative max-w-full">
                   <textarea
                     type="text"
-                    :placeholder="$t('quantity_stock')"
+                    placeholder="Description"
                     name="quantity"
                     id="quantity"
                     class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full"
@@ -126,7 +121,7 @@
                 <label
                   class="mb-2 block text-sm font-medium text-default-900"
                   for="description"
-                  >{{ $t("nutritional_facts") }}</label
+                  >Nutritinal Facts</label
                 >
               </div>
               <div class="grid gap-6 lg:grid-cols-2">
@@ -173,19 +168,23 @@
                     v-model="singleMenuLocal.nutritionalInfo.calories"
                   />
                 </div>
-                <div class="relative max-w-full flex">
+                <div class="relative max-w-full">
                   <label
-                    class="mb-2 block text-sm font-medium text-default-900 mr-2"
-                    for="quantity"
-                    >{{ $t("availability") }}</label
+                    class="mb-4 font-bold block text-sm text-default-900"
+                    for="description"
+                    >menu availability</label
                   >
-                  <input
-                    type="checkbox"
-                    name="sellingPrice"
-                    id="sellingPrice"
-                    class="form-input rounded-lg border border-default-200 dark:bg-default-50"
-                    v-model="singleMenuLocal.availability"
-                  />
+                  <label class="inline-flex items-center me-5 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      value=""
+                      class="sr-only peer"
+                      v-model="singleMenuLocal.availability"
+                    />
+                    <div
+                      class="relative w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-focus:ring-4 peer-focus:ring-yellow-300 dark:peer-focus:ring-yellow-800 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-yellow-400"
+                    ></div>
+                  </label>
                 </div>
               </div>
             </div>
@@ -232,7 +231,7 @@
                       />
                     </svg>
                   </div>
-                  {{ $t("save") }}
+                  Save
                 </button>
               </div>
             </div>
@@ -240,7 +239,6 @@
         </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 <script setup>
@@ -258,19 +256,22 @@ const singleMenuLocal = ref({
     fat: 0,
     protein: 0,
   },
-  imageUrl: "",
+  imageUrl: "asdf",
   availability: false,
   category: "",
 });
 import { useRestaurantAdminStore } from "@/stores/restaurantAdmin";
 import { storeToRefs } from "pinia";
 const restStore = useRestaurantAdminStore();
-const { fetchSingleMenu, editMenu } = restStore;
-const { singleMenu, loading } = storeToRefs(restStore);
+const { fetchSingleMenu, fetchCategory, editMenu } = restStore;
+const { singleMenu, loading, category } = storeToRefs(restStore);
 const options = ["available", "reserved", "occupied"];
+const categoryLocal = ref();
 onMounted(async () => {
   await fetchSingleMenu(props.id);
+  await fetchCategory();
   singleMenuLocal.value = await singleMenu.value;
+  categoryLocal.value = await category.value;
 });
 const submit = () => {
   editMenu(singleMenuLocal.value);

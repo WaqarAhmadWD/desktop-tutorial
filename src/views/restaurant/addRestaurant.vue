@@ -2,7 +2,7 @@
     <div class="w-full lg:ps-64">
    <div class="page-content space-y-6 p-6">
       <div class="flex w-full items-center justify-between">
-         <h4 class="text-xl font-medium">{{ $t("add_restaurant") }}</h4>
+         <h4 class="text-xl font-medium">Add Restaurant</h4>
          <ol aria-label="Breadcrumb" class="hidden min-w-0 items-center gap-2 whitespace-nowrap md:flex">
             <li class="text-sm">
                <a class="flex items-center gap-2 align-middle text-default-800 transition-all hover:text-primary-500" href="/yum_b/admin/restaurants">
@@ -12,13 +12,13 @@
                   </svg>
                </a>
             </li>
-            <li aria-current="page" class="truncate text-sm font-medium text-primary hover:text-primary-500">{{ $t("add_restaurant") }}</li>
+            <li aria-current="page" class="truncate text-sm font-medium text-primary hover:text-primary-500">Add Restaurant</li>
          </ol>
       </div>
       <div class="grid gap-6 xl:grid-cols-2">
    <div>
       <div class="rounded-lg border border-default-200 p-6">
-          <h4 class="mb-4 text-base font-medium text-default-800">{{ $t("upload_logo_image") }}</h4>
+          <h4 class="mb-4 text-base font-medium text-default-800">Upload Logo Image</h4>
          <div class="mb-4 flex h-96 flex-col items-center justify-center rounded-lg border border-default-200 p-6">
             <div class="py-20 bg-white px-2">
                 <div class="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl">
@@ -32,7 +32,7 @@
                                 
                                 <div v-if="!data.logo" class="flex flex-col items-center">
                                     <BsUpload class="text-xl  text-[#f6821d]" />
-                                <span class="block text-gray-500 font-normal">{{ $t("upload_logo_image") }}</span>
+                                <span class="block text-gray-500 font-normal">Upload Logo Image</span>
                                 </div>
                             </div>
 
@@ -43,7 +43,7 @@
                 </div>
             </div>
          </div>
-         <h4 class="mb-4 text-base font-medium text-default-800">{{ $t("upload_cover_image") }}</h4>
+         <h4 class="mb-4 text-base font-medium text-default-800">Upload Cover Image</h4>
          <div class="">
             <div class="flex h-40 flex-col items-center justify-center rounded-lg border border-default-200">
                 <div class=" bg-white h-28 w-64 p-0">
@@ -56,7 +56,7 @@
                                 
                                 <div class="flex flex-col items-center">
                                     <BsUpload class="text-xl  text-[#f6821d]" />
-                                <span class="block text-gray-500 font-normal">{{ $t("upload_cover_image") }}</span>
+                                <span class="block text-gray-500 font-normal">Upload Cover Image</span>
                                 </div>
                             </div>
 
@@ -77,24 +77,24 @@
                <div class="mb-6 grid gap-6 lg:grid-cols-2">
                   <div class="relative max-w-full">
                      <label class="mb-2 block text-sm font-medium text-default-900" for="Rname">Restaurant Name</label>
-                     <div class="relative max-w-full"><input v-model="data.name" type="text" :placeholder="$t('enter_your_restaurant_name')" name="Rname" id="Rname" class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full" value=""></div>
+                     <div class="relative max-w-full"><input v-model="data.name" type="text" placeholder="Enter Your Restaurant Name" name="Rname" id="Rname" class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full" value=""></div>
                   </div>
                   <div class="relative max-w-full">
-                     <label class="mb-2 block text-sm font-medium text-default-900" for="address">{{ $t("address") }}</label>
-                     <div class="relative max-w-full"><input v-model="data.address" type="text" :placeholder="$t('enter_your_address')" name="address" id="address" class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full" value=""></div>
+                     <label class="mb-2 block text-sm font-medium text-default-900" for="address">Address</label>
+                     <div class="relative max-w-full"><input v-model="data.address" type="text" placeholder="Enter Your Address" name="address" id="address" class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full" value=""></div>
                   </div>
                   <div class="relative max-w-full">
-                     <label class="mb-2 block text-sm font-medium text-default-900" for="contactNO">{{ $t("contact_number") }}</label>
-                     <div class="relative max-w-full"><input v-model="data.contactNumber" type="text" :placeholder="$t('enter_your_contact')" name="contactNO" id="contactNO" class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full" value=""></div>
+                     <label class="mb-2 block text-sm font-medium text-default-900" for="contactNO">Contact Number</label>
+                     <div class="relative max-w-full"><input v-model="data.contactNumber" type="text" placeholder="Enter Your Contact Number" name="contactNO" id="contactNO" class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full" value=""></div>
                   </div>
                   <div class="relative max-w-full">
-                     <label class="mb-2 block text-sm font-medium text-default-900" for="email">{{ $t("email") }}</label>
-                     <div class="relative max-w-full"><input v-model="data.email" type="email" :placeholder="$t('enter_your_email')" name="email" id="email" class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full" value=""></div>
+                     <label class="mb-2 block text-sm font-medium text-default-900" for="email">Email</label>
+                     <div class="relative max-w-full"><input v-model="data.email" type="email" placeholder="Enter Your Email" name="email" id="email" class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full" value=""></div>
                   </div>
                </div>
                <div class="mb-6 grid gap-6 lg:grid-cols-3">
                       <div>
-                     <label for="city" class="mb-2 block text-sm font-medium text-default-900">{{ $t("city") }}</label>
+                     <label for="city" class="mb-2 block text-sm font-medium text-default-900">City</label>
                             <select id="countries" class="text-gray-900 text-sm rounded-lg block w-full p-2.5">
 
                                 <option>New York</option>
@@ -104,7 +104,7 @@
                             </select>
                   </div>
                   <div>
-                     <label for="countries" class="mb-2 block text-sm font-medium text-default-900">{{ $t("country_region") }}</label>
+                     <label for="countries" class="mb-2 block text-sm font-medium text-default-900">Country/Region</label>
                             <select id="countries" class="text-gray-900 text-sm rounded-lg block w-full p-2.5">
 
                                 <option>United States</option>
@@ -114,10 +114,10 @@
                             </select>
                   </div>
                   <div>
-                     <label for="billing-zip-code1" class="mb-2 block text-sm font-medium text-default-900">{{ $t("zip_postal_code") }}</label>
+                     <label for="billing-zip-code1" class="mb-2 block text-sm font-medium text-default-900">ZIP/Postal Code</label>
                            <div class=" max-w-sm mx-auto">
                                <label for="zipCode"></label>
-                              <input class="text-gray-900 text-sm rounded-lg block w-full p-2.5" type="number" id="zipCode" :placeholder="$t('add_zip_code')">
+                              <input class="text-gray-900 text-sm rounded-lg block w-full p-2.5" type="number" id="zipCode" placeholder="Add Zip Code">
                            </div>
                   </div>
                   <div class="w-full grid grid-cols-1" >
@@ -125,7 +125,7 @@
          <div class="flex items-center justify-between gap-4">
             <div class="flex items-center min-w-[4rem]">
                <input checked id="monday" name="days" type="checkbox" value="monday" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-               <label for="monday" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ $t("mon") }}</label>
+               <label for="monday" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Mon</label>
             </div>
             <div class="w-full max-w-[7rem]">
                <label for="start-time-monday" class="sr-only">Start time:</label>
@@ -155,7 +155,7 @@
          <div class="flex items-center justify-between gap-4">
             <div class="flex items-center min-w-[4rem]">
                <input id="tuesday" name="days" type="checkbox" value="tuesday" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-               <label for="tuesday" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ $t("tue") }}</label>
+               <label for="tuesday" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Tue</label>
             </div>
             <div class="w-full max-w-[7rem]">
                <label for="start-time-tuesday" class="sr-only">Start time:</label>
@@ -185,7 +185,7 @@
          <div class="flex items-center justify-between gap-4">
             <div class="flex items-center min-w-[4rem]">
                <input checked id="wednesday" name="days" type="checkbox" value="wednesday" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-               <label for="wednesday" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ $t("wed") }}</label>
+               <label for="wednesday" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Wed</label>
             </div>
             <div class="w-full max-w-[7rem]">
                <label for="start-time-wednesday" class="sr-only">Start time:</label>
@@ -215,7 +215,7 @@
          <div class="flex items-center justify-between gap-4">
             <div class="flex items-center min-w-[4rem]">
                <input id="thursday" name="days" type="checkbox" value="thursday" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-               <label for="thursday" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ $t("thu") }}</label>
+               <label for="thursday" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Thu</label>
             </div>
             <div class="w-full max-w-[7rem]">
                <label for="start-time-thursday" class="sr-only">Start time:</label>
@@ -245,7 +245,7 @@
          <div class="flex items-center justify-between gap-4">
             <div class="flex items-center min-w-[4rem]">
                <input id="friday" name="days" type="checkbox" value="friday" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-               <label for="friday" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ $t("fri") }}</label>
+               <label for="friday" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Fri</label>
             </div>
             <div class="w-full max-w-[7rem]">
                <label for="start-time-friday" class="sr-only">Start time:</label>
@@ -275,7 +275,7 @@
          <div class="flex items-center justify-between gap-4">
             <div class="flex items-center min-w-[4rem]">
                <input id="saturday" name="days" type="checkbox" value="Saturday" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-               <label for="saturday" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ $t("sat") }}</label>
+               <label for="saturday" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sat</label>
             </div>
             <div class="w-full max-w-[7rem]">
                <label for="start-time-friday" class="sr-only">Start time:</label>
@@ -305,7 +305,7 @@
          <div class="flex items-center justify-between gap-4">
             <div class="flex items-center min-w-[4rem]">
                <input id="sunday" name="days" type="checkbox" value="Sunday" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-               <label for="sunday" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ $t("sun") }}</label>
+               <label for="sunday" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sun</label>
             </div>
             <div class="w-full max-w-[7rem]">
                <label for="start-time-friday" class="sr-only">Start time:</label>
@@ -334,12 +334,12 @@
     </div>   
                   
                     <div class="lg:col-span-3 relative w-full">
-                     <label class="mb-2 block text-sm font-medium text-default-900" for="description">{{ $t("description") }}</label>
-                     <div class="relative w-full"><textarea v-model="data.description" id="description" :placeholder="$t('enter_description')" name="description" rows="5" class="rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full"></textarea></div>
+                     <label class="mb-2 block text-sm font-medium text-default-900" for="description">Description</label>
+                     <div class="relative w-full"><textarea v-model="data.description" placeholder="Enter Description" name="description" rows="5" class="rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full"></textarea></div>
                   </div>
                   <div class="lg:col-span-3 relative w-full">
-                     <label class="mb-2 block text-sm font-medium text-default-900" for="operatingHours">{{ $t("operating_hours") }}</label>
-                     <div class="relative w-full"><textarea v-model="data.operatingHours" :placeholder="$t('enter_operating_hours')" name="operatingHours" rows="5" class="rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full"></textarea></div>
+                     <label class="mb-2 block text-sm font-medium text-default-900" for="operatingHours">Operating Hours</label>
+                     <div class="relative w-full"><textarea v-model="data.operatingHours" placeholder="Enter Operating Hours" name="operatingHours" rows="5" class="rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full"></textarea></div>
                   </div>
                </div>
                <div class="flex flex-wrap justify-end gap-4">
@@ -367,7 +367,7 @@
                         <polyline points="17 21 17 13 7 13 7 21"></polyline>
                         <polyline points="7 3 7 8 15 8"></polyline>
                      </svg>
-                     {{ $t("save") }}
+                     Save
                   </button>
                </div>
             </form>
