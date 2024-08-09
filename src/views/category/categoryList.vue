@@ -11,7 +11,7 @@
             <a
               class="flex items-center gap-2 align-middle text-default-800 transition-all hover:text-primary-500"
               href="/yum_b/admin/customers"
-              >Users<svg
+              >Category<svg
                 stroke="currentColor"
                 fill="none"
                 stroke-width="2"
@@ -29,15 +29,15 @@
             aria-current="page"
             class="truncate text-sm font-medium text-primary hover:text-orange-500"
           >
-            Users List
+            Category List
           </li>
         </ol>
       </div>
       <div class="rounded-lg border border-default-200">
         <div class="border-b border-b-default-200 px-6 py-4">
           <div class="flex flex-wrap items-center justify-between gap-6">
-            <h2 class="text-xl font-medium text-default-900">Users</h2>
-            <RouterLink to="/add-user">
+            <h2 class="text-xl font-medium text-default-900">Category</h2>
+            <RouterLink to="/add-category">
               <button
                 class="inline-flex rounded-md bg-orange-400 px-6 py-2.5 text-sm text-white hover:bg-orange-500"
               >
@@ -55,7 +55,7 @@
                 >
                   <path d="M5 12h14"></path>
                   <path d="M12 5v14"></path></svg
-                >Add a new user
+                >Add a new Category
               </button>
             </RouterLink>
           </div>
@@ -177,32 +177,15 @@
                       scope="col"
                       class="whitespace-nowrap px-6 py-4 text-start text-sm font-medium text-default-500"
                     >
-                      First Name
+                      Category Name
                     </th>
                     <th
                       scope="col"
                       class="whitespace-nowrap px-6 py-4 text-start text-sm font-medium text-default-500"
                     >
-                      Last Name
+                      Description
                     </th>
-                    <th
-                      scope="col"
-                      class="whitespace-nowrap px-6 py-4 text-start text-sm font-medium text-default-500"
-                    >
-                      Phone
-                    </th>
-                    <th
-                      scope="col"
-                      class="whitespace-nowrap px-6 py-4 text-start text-sm font-medium text-default-500"
-                    >
-                      Email
-                    </th>
-                    <th
-                      scope="col"
-                      class="whitespace-nowrap px-6 py-4 text-start text-sm font-medium text-default-500"
-                    >
-                      Role
-                    </th>
+
                     <th
                       scope="col"
                       class="whitespace-nowrap px-6 py-4 text-start text-sm font-medium text-default-500"
@@ -212,7 +195,10 @@
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-default-200">
-                  <tr v-for="user in users" :key="users._id">
+                  <tr
+                    v-for="singleCategory in category"
+                    :key="singleCategory?._id"
+                  >
                     <td class="whitespace-nowrap px-6">
                       <img
                         class="mx-auto w-10 h-10 rounded-full"
@@ -223,109 +209,80 @@
                     <td
                       class="whitespace-nowrap px-6 py-4 text-base text-default-800"
                     >
-                      {{ user.fullName }}
+                      {{ singleCategory.name }}
                     </td>
+
                     <td
                       class="whitespace-nowrap px-6 py-4 text-base text-default-800"
                     >
-                      Keja
-                    </td>
-                    <td
-                      class="whitespace-nowrap px-6 py-4 text-base text-default-800"
-                    >
-                      1078832848
-                    </td>
-                    <td
-                      class="whitespace-nowrap px-6 py-4 text-base text-default-800"
-                    >
-                      {{ user.email }}
-                    </td>
-                    <!-- |&nbsp;<span class="text-xs">19:54</span> -->
-                    <td class="whitespace-nowrap px-6 py-4">
-                      <span
-                        class="rounded-md px-3 py-1 text-xs font-medium"
-                        :class="{
-                          'bg-green-500/10 text-green-500':
-                            user.role == 'Super Admin',
-                          'bg-yellow-500/10 text-yellow-500':
-                            user.role == 'Restaurant Admin',
-                        }"
-                        >{{ user.role }}</span
-                      >
+                      {{ singleCategory.description }}
                     </td>
                     <td class="px-6 py-4">
-                      <div class="">
-                        <div class="flex gap-3">
-                          <RouterLink
-                            v-if="user._id"
-                            :to="{
-                              name: 'editUser',
-                              params: { id: user._id },
-                            }"
-                          >
-                            <svg
-                              stroke="currentColor"
-                              fill="none"
-                              stroke-width="2"
-                              viewBox="0 0 24 24"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              class="cursor-pointer transition-colors text-blue-400 hover:text-blue-500"
-                              height="20"
-                              width="20"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"
-                              ></path>
-                              <path d="m15 5 4 4"></path>
-                            </svg>
-                          </RouterLink>
-                          <RouterLink
-                            v-if="user._id"
-                            :to="{
-                              name: 'userDetails',
-                              params: { id: user._id },
-                            }"
-                          >
-                            <svg
-                              stroke="currentColor"
-                              fill="none"
-                              stroke-width="2"
-                              viewBox="0 0 24 24"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              class="cursor-pointer transition-colors text-[#f6821d] hover:text-[#ff5a1f]"
-                              height="20"
-                              width="20"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"
-                              ></path>
-                              <circle cx="12" cy="12" r="3"></circle>
-                            </svg>
-                          </RouterLink>
+                      <div class="flex gap-3">
+                        <RouterLink
+                          v-if="singleCategory?._id"
+                          :to="{
+                            name: 'editCategory',
+                            params: { id: singleCategory._id },
+                          }"
+                        >
                           <svg
-                            @click="deleteUserData(user._id)"
+                            @click=""
                             stroke="currentColor"
                             fill="none"
                             stroke-width="2"
                             viewBox="0 0 24 24"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            class="cursor-pointer transition-colors text-red-700 hover:text-red-900"
+                            class="cursor-pointer transition-colors hover:text-blue-700 text-blue-400"
                             height="20"
                             width="20"
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path d="M3 6h18"></path>
                             <path
-                              d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"
+                              d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"
                             ></path>
-                            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
-                            <line x1="10" x2="10" y1="11" y2="17"></line>
-                            <line x1="14" x2="14" y1="11" y2="17"></line>
+                            <path d="m15 5 4 4"></path>
+                          </svg>
+                        </RouterLink>
+                        <svg
+                          v-if="!loading"
+                          @click="deleteCategoryData(singleCategory?._id)"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="cursor-pointer transition-colors hover:text-red-500 text-red-700"
+                          height="20"
+                          width="20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M3 6h18"></path>
+                          <path
+                            d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"
+                          ></path>
+                          <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                          <line x1="10" x2="10" y1="11" y2="17"></line>
+                          <line x1="14" x2="14" y1="11" y2="17"></line>
+                        </svg>
+                        <div role="status" v-if="loading">
+                          <svg
+                            aria-hidden="true"
+                            class="inline w-4 h-4 text-gray-200 animate-spin dark:text-gray-600 fill-yellow-400"
+                            viewBox="0 0 100 101"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                              fill="currentColor"
+                            />
+                            <path
+                              d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                              fill="currentFill"
+                            />
                           </svg>
                         </div>
                       </div>
@@ -343,30 +300,21 @@
 
 <script setup>
 import { onMounted, ref } from "vue";
-import flatpickr from "flatpickr";
-import "flatpickr/dist/flatpickr.min.css";
-import { useSuperAdminStore } from "@/stores/superAdmin";
+import { useRestaurantAdminStore } from "@/stores/restaurantAdmin";
 import { storeToRefs } from "pinia";
 import { RouterLink } from "vue-router";
 
-const superAdminStore = useSuperAdminStore();
-const { fetchUsers, deleteUser } = superAdminStore;
-const { users } = storeToRefs(superAdminStore);
+const restaurantAdminStore = useRestaurantAdminStore();
+const { fetchCategory, deleteCategory } = restaurantAdminStore;
+const { category } = storeToRefs(restaurantAdminStore);
 
-const datePickerInput = ref(null);
-
-onMounted(() => {
-  fetchUsers();
-  if (datePickerInput.value) {
-    flatpickr(datePickerInput.value, {
-      dateFormat: "d/m/Y",
-    });
-  }
+onMounted(async () => {
+  await fetchCategory();
 });
 
-const deleteUserData = async (id) => {
-  await deleteUser(id);
-  await fetchUsers();
+const deleteCategoryData = async (id) => {
+  await deleteCategory(id);
+  await fetchCategory();
 };
 </script>
 

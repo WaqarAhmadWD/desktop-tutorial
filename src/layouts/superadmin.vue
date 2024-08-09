@@ -1,8 +1,8 @@
 <template>
   <Header />
   <Notification class="z-100" v-if="toggleNotif" />
-  <Sidebar @click="langHandleEvent" />
-  <RouterView @click="langHandleEvent" />
+  <Sidebar @click="toggleNotifFunClose" />
+  <RouterView @click="toggleNotifFunClose" />
 </template>
 
 <script setup>
@@ -17,13 +17,7 @@ import { onMounted } from "vue";
 
 const store = useGeneralStoreStore();
 const { toggleNotif } = storeToRefs(store);
-const { toggleNotifFunClose, toggleCloseLang } = store;
-
-const langHandleEvent = async() => {
-  await toggleCloseLang()
-  await toggleNotifFunClose()
-}
-
+const { toggleNotifFunClose } = store;
 </script>
 
 <style lang="scss" scoped></style>

@@ -85,7 +85,7 @@
                         <rect width="7" height="7" x="14" y="14" rx="1"></rect>
                         <rect width="7" height="7" x="3" y="14" rx="1"></rect>
                       </svg>
-                      {{ $t("dashboard") }}
+                      Dashboard
                     </RouterLink>
                   </li>
                   <li class="">
@@ -111,7 +111,7 @@
                         <path d="M4 10h2"></path>
                         <path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"></path>
                       </svg>
-                      {{ $t("orders") }}
+                      Orders
                       <svg
                         stroke="currentColor"
                         fill="none"
@@ -150,7 +150,7 @@
                             >
                               <circle cx="12.1" cy="12.1" r="1"></circle>
                             </svg>
-                            {{ $t("order list") }}
+                            Orders List
                           </RouterLink>
                         </li>
                         <li class="group">
@@ -171,7 +171,7 @@
                             >
                               <circle cx="12.1" cy="12.1" r="1"></circle>
                             </svg>
-                            {{ $t("order details") }}
+                            Order Details
                           </RouterLink>
                         </li>
                       </ul>
@@ -200,7 +200,7 @@
                         <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
                         <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                       </svg>
-                      {{ $t("user") }}
+                      User
                       <svg
                         stroke="currentColor"
                         fill="none"
@@ -239,7 +239,7 @@
                             >
                               <circle cx="12.1" cy="12.1" r="1"></circle>
                             </svg>
-                            {{ $t("user list") }}
+                            User list
                           </RouterLink>
                         </li>
 
@@ -261,7 +261,7 @@
                             >
                               <circle cx="12.1" cy="12.1" r="1"></circle>
                             </svg>
-                            {{ $t("add user") }}
+                            Add User
                           </RouterLink>
                         </li>
                       </ul>
@@ -297,7 +297,7 @@
                         <path d="M8 11h.01"></path>
                         <path d="M10 22v-6.5m4 0V22"></path>
                       </svg>
-                      {{ $t("restaurants") }}
+                      Restaurants
                       <svg
                         stroke="currentColor"
                         fill="none"
@@ -336,7 +336,7 @@
                             >
                               <circle cx="12.1" cy="12.1" r="1"></circle>
                             </svg>
-                            {{ $t("restaurant list") }}
+                            Restaurants List
                           </RouterLink>
                         </li>
 
@@ -358,7 +358,7 @@
                             >
                               <circle cx="12.1" cy="12.1" r="1"></circle>
                             </svg>
-                            {{ $t("add restaurant") }}
+                            Add Restaurant
                           </RouterLink>
                         </li>
                       </ul>
@@ -393,7 +393,7 @@
                           d="M6.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.74 1.62"
                         ></path>
                       </svg>
-                      {{ $t("menus") }}
+                      Menus
                       <svg
                         stroke="currentColor"
                         fill="none"
@@ -432,7 +432,7 @@
                             >
                               <circle cx="12.1" cy="12.1" r="1"></circle>
                             </svg>
-                            {{ $t("menus list") }}
+                            menus List
                           </RouterLink>
                         </li>
                         <li class="group">
@@ -453,7 +453,7 @@
                             >
                               <circle cx="12.1" cy="12.1" r="1"></circle>
                             </svg>
-                            {{ $t("add menus") }}
+                            Add menus
                           </RouterLink>
                         </li>
                       </ul>
@@ -464,7 +464,7 @@
                       class="hs-accordion-toggle flex w-full items-center gap-x-3.5 rounded-md px-4 py-3 text-sm text-default-700 hover:bg-gray-100"
                       @click="toggleTableFun"
                     >
-                      <!-- <svg
+                      <svg
                         stroke="currentColor"
                         fill="none"
                         stroke-width="2"
@@ -487,9 +487,8 @@
                         <path
                           d="M6.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.74 1.62"
                         ></path>
-                      </svg> -->
-                      <FlFilledTableDeleteRow class="text-xl" />
-                      {{ $t("table") }}
+                      </svg>
+                      Table
                       <svg
                         stroke="currentColor"
                         fill="none"
@@ -528,7 +527,7 @@
                             >
                               <circle cx="12.1" cy="12.1" r="1"></circle>
                             </svg>
-                            {{ $t("add table") }}
+                            add table
                           </RouterLink>
                         </li>
                         <li class="group"></li>
@@ -550,7 +549,7 @@
                             >
                               <circle cx="12.1" cy="12.1" r="1"></circle>
                             </svg>
-                            {{ $t("table list") }}
+                            table list
                           </RouterLink>
                         </li>
                       </ul>
@@ -561,8 +560,31 @@
                       class="hs-accordion-toggle flex w-full items-center gap-x-3.5 rounded-md px-4 py-3 text-sm text-default-700 hover:bg-gray-100"
                       @click="toggleBookingFun"
                     >
-                      <TaBrandBooking class="text-xl" />
-                      {{ $t("booking") }}
+                      <!-- <svg
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        height="20"
+                        width="20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"></path>
+                        <path d="M7 21h10"></path>
+                        <path d="M19.5 12 22 6"></path>
+                        <path
+                          d="M16.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.73 1.62"
+                        ></path>
+                        <path
+                          d="M11.25 3c.27.1.8.53.74 1.36-.05.83-.93 1.2-.98 2.02-.06.78.33 1.24.72 1.62"
+                        ></path>
+                        <path
+                          d="M6.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.74 1.62"
+                        ></path>
+                      </svg> -->
+                      Booking
                       <svg
                         stroke="currentColor"
                         fill="none"
@@ -601,7 +623,7 @@
                             >
                               <circle cx="12.1" cy="12.1" r="1"></circle>
                             </svg>
-                            {{ $t("booking list") }}
+                            Booking List
                           </RouterLink>
                         </li>
                         <li class="group">
@@ -622,7 +644,7 @@
                             >
                               <circle cx="12.1" cy="12.1" r="1"></circle>
                             </svg>
-                            {{ $t("booking details") }}
+                            Booking Details
                           </RouterLink>
                         </li>
                         <li class="group">
@@ -643,7 +665,7 @@
                             >
                               <circle cx="12.1" cy="12.1" r="1"></circle>
                             </svg>
-                            {{ $t("add booking") }}
+                            Add Booking
                           </RouterLink>
                         </li>
                         <li class="group">
@@ -664,7 +686,97 @@
                             >
                               <circle cx="12.1" cy="12.1" r="1"></circle>
                             </svg>
-                            {{ $t("edit booking") }}
+                            Edit Booking
+                          </RouterLink>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="">
+                    <button
+                      class="hs-accordion-toggle flex w-full items-center gap-x-3.5 rounded-md px-4 py-3 text-sm text-default-700 hover:bg-gray-100"
+                      @click="toggleCategoryFun"
+                    >
+                      <svg
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        height="20"
+                        width="20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"
+                        ></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                      </svg>
+                      Category
+                      <svg
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="ms-auto transition-all hs-accordion-active:rotate-180"
+                        height="16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="m6 9 6 6 6-6"></path>
+                      </svg>
+                    </button>
+                    <div
+                      class="w-full overflow-hidden transition-[height]"
+                      :class="{ hidden: !toggleCategory }"
+                    >
+                      <ul class="mt-2 space-y-2">
+                        <li class="group">
+                          <RouterLink
+                            class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm font-medium text-default-700 rounded-md hover:bg-gray-100 group-[.active]:text-primary group-[.active]:bg-primary/10"
+                            to="/category-list"
+                          >
+                            <svg
+                              stroke="currentColor"
+                              fill="none"
+                              stroke-width="2"
+                              viewBox="0 0 24 24"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              height="24"
+                              width="24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle cx="12.1" cy="12.1" r="1"></circle>
+                            </svg>
+                            Category list
+                          </RouterLink>
+                        </li>
+
+                        <li class="group">
+                          <RouterLink
+                            class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm font-medium text-default-700 rounded-md hover:bg-gray-100 group-[.active]:text-primary group-[.active]:bg-primary/10"
+                            to="/add-category"
+                          >
+                            <svg
+                              stroke="currentColor"
+                              fill="none"
+                              stroke-width="2"
+                              viewBox="0 0 24 24"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              height="24"
+                              width="24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle cx="12.1" cy="12.1" r="1"></circle>
+                            </svg>
+                            Add Category
                           </RouterLink>
                         </li>
                       </ul>
@@ -704,8 +816,6 @@
 <script setup>
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
-import { TaBrandBooking } from '@kalimahapps/vue-icons';
-import { FlFilledTableDeleteRow } from '@kalimahapps/vue-icons';
 import { useGeneralStoreStore } from "@/stores/generalStore";
 const store = useGeneralStoreStore();
 import { storeToRefs } from "pinia";
@@ -734,6 +844,10 @@ const toggleTableFun = () => {
 const toggleBooking = ref(false);
 const toggleBookingFun = () => {
   toggleBooking.value = !toggleBooking.value;
+};
+const toggleCategory = ref(false);
+const toggleCategoryFun = () => {
+  toggleCategory.value = !toggleCategory.value;
 };
 </script>
 <style lang="scss" scoped></style>

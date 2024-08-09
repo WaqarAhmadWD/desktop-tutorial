@@ -1343,12 +1343,12 @@
 
 <script setup>
 import { ref, onMounted, defineProps } from "vue";
-import { useSuperAdminStore } from "@/stores/superAdmin";
+import { useRestaurantAdminStore } from "@/stores/restaurantAdmin";
 import { storeToRefs } from "pinia";
 
-const superAdminStore = useSuperAdminStore();
-const { fetchSingleUser, fetchSingleRest } = superAdminStore;
-const { singleUser, singleRest } = storeToRefs(superAdminStore);
+const restaurantAdminStore = useRestaurantAdminStore();
+const { fetchSingleUser, fetchSingleRest } = restaurantAdminStore;
+const { singleUser, singleRest } = storeToRefs(restaurantAdminStore);
 const singleUserLocal = ref({
   fullName: "",
   email: "",

@@ -80,16 +80,17 @@
                 <label
                   class="mb-2 block text-sm font-medium text-default-900"
                   for="Rname"
-                  >First Name</label
+                  >Name</label
                 >
                 <div class="relative max-w-full">
                   <input
                     type="text"
-                    placeholder="First Name"
+                    placeholder="Name of a category"
                     name="fname"
                     id="fname"
                     class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full"
-                    v-model="singleUserLocal.fullName"
+                    value=""
+                    v-model="data.name"
                   />
                 </div>
               </div>
@@ -97,130 +98,23 @@
                 <label
                   class="mb-2 block text-sm font-medium text-default-900"
                   for="address"
-                  >Last Name</label
+                  >Description</label
                 >
                 <div class="relative max-w-full">
                   <input
                     type="text"
-                    placeholder="Last Name"
+                    placeholder="Add description"
                     name="Last Name"
                     id="Last Name"
                     class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full"
-                    value=""
+                    v-model="data.description"
                   />
                 </div>
-              </div>
-              <div class="relative max-w-full">
-                <label
-                  class="mb-2 block text-sm font-medium text-default-900"
-                  for="address"
-                  >Email</label
-                >
-                <div class="relative max-w-full">
-                  <input
-                    type="text"
-                    placeholder="Enter Your Email"
-                    name="Email"
-                    id="Email"
-                    class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full"
-                    v-model="singleUserLocal.email"
-                  />
-                </div>
-              </div>
-              <div class="relative max-w-full">
-                <label
-                  class="mb-2 block text-sm font-medium text-default-900"
-                  for="contactNO"
-                  >Contact Number</label
-                >
-                <div class="relative max-w-full">
-                  <input
-                    type="text"
-                    placeholder="Enter Your Contact Number"
-                    name="contactNO"
-                    id="contactNO"
-                    class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full"
-                    value=""
-                  />
-                </div>
-              </div>
-              <div class="relative max-w-full">
-                <label
-                  class="mb-2 block text-sm font-medium text-default-900"
-                  for="email"
-                  >Address</label
-                >
-                <div class="relative max-w-full">
-                  <input
-                    type="text"
-                    placeholder="Enter Your Address"
-                    name="Address"
-                    id="Address"
-                    class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full"
-                    value=""
-                  />
-                </div>
-              </div>
-              <!-- <div class="relative max-w-full">
-                  <label class="mb-2 block text-sm font-medium text-default-900" for="email">Password</label>
-                  <div class="relative max-w-full"><input type="Password" placeholder="Enter Your Password" name="Password"
-                      id="Password"
-                      class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full"
-                      v-model="singleUserLocal.password"
-                      ></div>
-                </div>
-                <div class="relative max-w-full">
-                  <label class="mb-2 block text-sm font-medium text-default-900" for="email">Repeat Password</label>
-                  <div class="relative max-w-full"><input type="Password" placeholder="Repeat Your Email" name="Password"
-                      id="Password"
-                      class="form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50 w-full"
-                      value=""></div>
-                </div> -->
-            </div>
-            <div class="mb-6 grid gap-6 lg:grid-cols-2">
-              <div>
-                <label
-                  for="role"
-                  class="mb-2 block text-sm font-medium text-default-900"
-                  >Role</label
-                >
-                <select
-                  id="role"
-                  v-model="singleUserLocal.role"
-                  class="text-gray-900 text-sm rounded-lg block w-full p-2.5"
-                >
-                  <option selected disabled>Select: Role</option>
-                  <option>Super Admin</option>
-                  <option>Restaurant Admin</option>
-                </select>
-              </div>
-              <div v-if="singleUserLocal.role == 'Restaurant Admin'">
-                <label
-                  for="countries"
-                  class="mb-2 block text-sm font-medium text-default-900"
-                  >Associated Restaurant</label
-                >
-                <select
-                  id="countries"
-                  class="text-gray-900 text-sm rounded-lg block w-full p-2.5"
-                  v-model="singleUserLocal.associatedRestaurant"
-                >
-                  <option selected disabled>
-                    Select: Associated Restaurant
-                  </option>
-                  <option
-                    v-for="(rest, index) in restaurantsLocal"
-                    :key="index"
-                    :value="rest._id"
-                  >
-                    {{ rest.name }}
-                  </option>
-                </select>
               </div>
             </div>
             <div class="flex flex-wrap justify-end gap-4">
               <button
-                @click="updateUser"
+                @click="submitCateogry"
                 class="flex items-center justify-center gap-2 rounded-lg bg-[#f58220] px-6 py-2.5 text-center text-sm font-semibold text-white shadow-sm transition-colors duration-200 hover:bg-[#f97316]"
               >
                 <div role="status" v-if="loading">
@@ -267,37 +161,21 @@
     </div>
   </div>
 </template>
+
 <script setup>
-import { ref, onMounted, defineProps } from "vue";
-import { useSuperAdminStore } from "@/stores/superAdmin";
+import { useRestaurantAdminStore } from "@/stores/restaurantAdmin";
 import { storeToRefs } from "pinia";
-
-const superAdminStore = useSuperAdminStore();
-const { fetchSingleUser, editUser, fetchRest } = superAdminStore;
-const { singleUser, restaurants, loading } = storeToRefs(superAdminStore);
-const singleUserLocal = ref({
-  fullName: "",
-  email: "",
-  role: "",
-  associatedRestaurant: "",
+import { onMounted, ref } from "vue";
+const restaurantStore = useRestaurantAdminStore();
+const { createCategory } = restaurantStore;
+const { loading } = storeToRefs(restaurantStore);
+const data = ref({
+  name: "",
+  description: "",
 });
-const props = defineProps({
-  id: String,
-});
-
-const restaurantsLocal = ref(null);
-
-onMounted(async () => {
-  await fetchRest();
-  restaurantsLocal.value = await restaurants.value;
-  await fetchSingleUser(props.id);
-  singleUserLocal.value = await singleUser.value.data;
-});
-const updateUser = () => {
-  if (singleUserLocal.value.role == "Super Admin") {
-    singleUserLocal.value.associatedRestaurant = null;
-  }
-  editUser(singleUserLocal.value);
+const submitCateogry = async () => {
+  await createCategory(data.value);
 };
 </script>
+
 <style lang="scss" scoped></style>
